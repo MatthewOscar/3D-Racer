@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apex Drift 3D</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main id="app" aria-label="Apex Drift 3D racing game">
+      <canvas id="gameCanvas"></canvas>
+
+      <section class="hud hud-top" aria-label="Race status">
+        <div class="hud-block hud-brand">
+          <strong>Apex Drift 3D</strong>
+          <span id="trackName">Select Track</span>
+        </div>
+        <div class="hud-block hud-stat">
+          <span>POS</span>
+          <strong id="positionReadout">--</strong>
+        </div>
+        <div class="hud-block hud-stat">
+          <span>SPEED</span>
+          <strong id="speedReadout">0</strong>
+        </div>
+        <div class="hud-block hud-stat">
+          <span>TIME</span>
+          <strong id="timeReadout">0.00</strong>
+        </div>
+        <button id="menuButton" class="icon-button" type="button" aria-label="Track menu">=</button>
+      </section>
+
+      <section class="hud hud-bottom" aria-label="Race meters">
+        <div class="meter-wrap">
+          <div class="meter-label">
+            <span>PROGRESS</span>
+            <strong id="progressReadout">0%</strong>
+          </div>
+          <div class="meter">
+            <span id="progressMeter"></span>
+          </div>
+        </div>
+        <div class="meter-wrap nitro-wrap">
+          <div class="meter-label">
+            <span>NITRO</span>
+            <strong id="nitroReadout">100%</strong>
+          </div>
+          <div class="meter nitro-meter">
+            <span id="nitroMeter"></span>
+          </div>
+        </div>
+        <canvas id="miniMap" width="180" height="120" aria-label="Track map"></canvas>
+      </section>
+
+      <aside id="leaderboard" class="leaderboard" aria-label="Leaderboard"></aside>
+
+      <section id="trackOverlay" class="screen-overlay">
+        <div class="selector-shell">
+          <div class="selector-heading">
+            <p class="eyebrow">Championship</p>
+            <h1>Apex Drift 3D</h1>
+          </div>
+          <div id="trackCards" class="track-grid" aria-label="Track selection"></div>
+        </div>
+      </section>
+
+      <section id="countdown" class="countdown" aria-live="polite"></section>
+
+      <section id="resultPanel" class="screen-overlay result-overlay hidden" aria-live="polite">
+        <div class="result-shell">
+          <p class="eyebrow">Finish</p>
+          <h2 id="resultTitle">Race Complete</h2>
+          <div id="resultStats" class="result-stats"></div>
+          <div class="result-actions">
+            <button id="restartButton" class="primary-button" type="button">Race Again</button>
+            <button id="changeTrackButton" class="secondary-button" type="button">Tracks</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="touch-controls" aria-label="Touch controls">
+        <div class="touch-cluster">
+          <button data-control="left" class="touch-button" type="button" aria-label="Steer left">&lt;</button>
+          <button data-control="right" class="touch-button" type="button" aria-label="Steer right">&gt;</button>
+        </div>
+        <div class="touch-cluster">
+          <button data-control="brake" class="touch-button" type="button" aria-label="Brake">v</button>
+          <button data-control="gas" class="touch-button wide" type="button" aria-label="Accelerate">^</button>
+          <button data-control="boost" class="touch-button" type="button" aria-label="Nitro">N2O</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

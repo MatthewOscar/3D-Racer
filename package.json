@@ -1,0 +1,16 @@
+{
+  "name": "3d-racer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4174",
+    "serve": "python3 -m http.server 4174"
+  },
+  "dependencies": {
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.59.1"
+  }
+}
