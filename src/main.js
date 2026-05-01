@@ -984,8 +984,8 @@ function update(dt) {
 
 function getControls() {
   const steer =
-    (keys.has("KeyD") || keys.has("ArrowRight") || touch.right ? 1 : 0) -
-    (keys.has("KeyA") || keys.has("ArrowLeft") || touch.left ? 1 : 0);
+    (keys.has("KeyA") || keys.has("ArrowLeft") || touch.left ? 1 : 0) -
+    (keys.has("KeyD") || keys.has("ArrowRight") || touch.right ? 1 : 0);
   const gas = keys.has("KeyW") || keys.has("ArrowUp") || touch.gas;
   const brake = keys.has("KeyS") || keys.has("ArrowDown") || touch.brake;
   const boost = keys.has("ShiftLeft") || keys.has("ShiftRight") || keys.has("Space") || touch.boost;
